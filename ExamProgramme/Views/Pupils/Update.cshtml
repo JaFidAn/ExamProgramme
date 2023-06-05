@@ -1,0 +1,53 @@
+﻿@model ExamProgramme.ViewModels.PupilViewModel.UpdatePupilViewModel
+
+<br />
+<h2>Edit Pupil Information</h2>
+
+
+
+<form method="post" action="Update" class="mt-5">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="id" asp-for="Id" readonly />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="name" asp-for="Name" />
+			<span class="text-danger" asp-validation-for="Name"></span>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Surname</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="surname" asp-for="Surname" />
+			<span class="text-danger" asp-validation-for="Surname"></span>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Class</label>
+		<div class="col-sm-6">
+			<input type="number" class="form-control" name="class" asp-for="Class" />
+			<span class="text-danger" asp-validation-for="Class"></span>
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Update</button>
+		</div>
+
+		<div class="col-sm-3 d-grid">
+			<button type="submit" class="btn btn-danger"
+			asp-action="Delete" asp-controller="Pupils">Delete</button>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-6 d-grid">
+			<a type="submit" class="btn btn-outline-primary" href="/Pupils/Index" role="button">Cancel</a>
+		</div>
+	</div>
+	
+</form>

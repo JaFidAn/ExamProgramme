@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ExamProgramme.Models.Exam>
+
+<br />
+<h2 class="mb-4">List of Exams</h2>
+<a class="btn btn-primary btn-sm" href="/Exams/Create">Register New Exam</a>
+<table class="table mt-2">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Lesson</th>
+			<th>Pupil</th>
+			<th>Date</th>
+			<th>Grade</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Lesson.LessonName</td>
+				<td>@item.Pupil.Name @item.Pupil.Surname</td>
+				<td>@item.Date.ToString("dd MMMM yyyy")</td>
+				<td>@item.Grade</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Exams/Update/@item.Id">DETAILS</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
